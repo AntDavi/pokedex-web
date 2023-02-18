@@ -1,0 +1,42 @@
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 150%;
+}
+
+h1,
+h2 {
+    letter-spacing: -0.01em;
+    font-weight: 700;
+}
+
+h2,
+h3 {
+    color: var(--neutral-600);
+}
+
+h1 {
+    font-size: 6.4rem;
+    color: var(--white);
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+
+    letter-spacing: -0.01em;
+
+    color: var(--neutral-600);
+}
