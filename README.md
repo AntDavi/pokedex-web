@@ -1,2 +1,1 @@
-﻿# template-gulp
-# pokedex-web
+﻿# pokedex-web
