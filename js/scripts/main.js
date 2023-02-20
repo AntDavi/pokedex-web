@@ -17,3 +17,12 @@ cardPokemon.forEach(card => {
 closeModal.forEach(card => {
     card.addEventListener('click', closeModalPokemon);
 })
+
+// Script Slide
+
+var slide_hero = new Swiper(".slide-hero", {
+    effect: 'fade',
+    pagination: {
+        el: "",
+    },
+})

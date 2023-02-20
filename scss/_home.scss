@@ -1,0 +1,34 @@
+.s-hero {
+    position: relative;
+    width: 100%;
+    height: 99.4rem;
+
+    .slide-hero {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .swiper-slide {
+            &.blue {
+                .main-area {
+                    background-image: url("../assets/bg-blue.svg");
+                }
+            }
+
+            .main-area {
+                background: url("../assets/bg-red.svg") no-repeat center center;
+                background-size: cover;
+                width: 100%;
+                height: 70.6rem;
+    
+                .text-area {
+                    .image-pokeball {
+                        margin-top: 20rem ;
+                    }
+                }
+            }
+
+        }
+
+    }
+}
