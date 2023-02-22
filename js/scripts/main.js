@@ -23,6 +23,6 @@ closeModal.forEach(card => {
 var slide_hero = new Swiper(".slide-hero", {
     effect: 'fade',
     pagination: {
-        el: "",
+        el: ".s-hero .slide-hero .swiper-slide .main-area .explore-area .swiper-pagination",
     },
 })
