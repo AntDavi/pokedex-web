@@ -75,7 +75,7 @@
                     .img-pokeball {
                         position: relative;
                         z-index: 1;
-                        
+
                         width: 100%;
                         max-width: 79.8rem;
                         margin: 0 auto;
@@ -106,6 +106,7 @@
                         transform: rotate(-90deg);
                         top: -3.9rem;
                         left: -3.7rem;
+
                         span {
                             font-family: 'Inter', "sans-serif";
                             font-weight: 500;
@@ -113,8 +114,9 @@
                             line-height: 150%;
                             color: var(--white);
                             margin-left: 3rem;
-                            
+
                         }
+
                         .icon {
                             width: 4rem;
                             height: 4rem;
@@ -125,13 +127,14 @@
                             @include centerTotalFlex;
 
                             transform: rotate(90deg);
-                        
+
                             i {
                                 color: var(--white);
                                 font-size: 1.5rem;
                             }
                         }
                     }
+
                     .swiper-pagination {
                         position: relative;
 
@@ -146,6 +149,85 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+.s-pokemons-list {
+    position: relative;
+    padding-top: 12rem;
+    margin-top: -28.8rem;
+    z-index: 2;
+
+    .pokemons-list-top {
+        width: 100%;
+        @include flex (row, center, space-between);
+        height: 16.8rem;
+
+        h2 {
+            width: 100%;
+            max-width: 19rem;
+        }
+
+        .search {
+            margin-top: 2.2rem;
+        }
+    }
+
+    .pokemons-list-content {
+        display: flex;
+
+        .left-container {
+            width: 100%;
+            max-width: 23.9rem;
+            border-right: 1px solid #f3f3f3;
+            padding-top: 7.1rem;
+
+            ul {
+                li {
+                    &:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+
+        .right-container {
+            padding-top: 7.1rem;
+            padding-left: 7.5rem;
+            padding-bottom: 8.8rem;
+
+            width: 100%;
+
+            .right-container-top {
+                margin-bottom: 6.4rem;
+                &>div {
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        margin-left: 1.8rem;
+
+                        font-family: 'Montserrat', "sans-serif";
+                        font-weight: 600;
+                        font-size: 1.8rem;
+                        line-height: 150%;
+                        color: var(--neutral-700);
+                    }
+                }
+            }
+
+            .right-container-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 3.2rem;
+                margin-bottom: 6.4rem;
+            }
+
+            .btn-load-more {
+                display: table;
+                margin: 0 auto;
             }
         }
     }

@@ -78,6 +78,10 @@
         }
 
         @include centerTotalFlex;
+
+        i {
+            color: var(--primary-blue);
+        }
     }
 }
 
@@ -87,6 +91,11 @@
     filter: grayscale(100%);
     opacity: 0.6;
     transition: .3s ease;
+
+    &.active {
+        filter: grayscale(0);
+        opacity: 1;
+    }
 
     &:hover {
         filter: grayscale(0);
@@ -103,6 +112,13 @@
     span {
         font-weight: 500;
         font-size: 15px;
+        text-transform: capitalize;
+    }
+
+    &.all {
+        span {
+            color: var(--primary-blue);
+        }
     }
 
     &.fire {

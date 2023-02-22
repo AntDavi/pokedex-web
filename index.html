@@ -106,6 +106,441 @@
         </div>
     </section>
 
+    <section class="s-pokemons-list">
+        <div class="container">
+            <div class="pokemons-list-top">
+                <h2>Select your Pokémons</h2>
+                <div class="search">
+                    <input type="text" placeholder="Search name or code">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="pokemons-list-content">
+                <div class="left-container">
+                    <ul>
+                        <li>
+                            <button class="type-filter all active">
+                                <div class="icon">
+                                    <img src="assets/icon-types/all.svg" alt="">
+                                </div>
+                                <span>All</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter bug">
+                                <div class="icon">
+                                    <img src="assets/icon-types/bug.svg" alt="">
+                                </div>
+                                <span>Bug</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter dark">
+                                <div class="icon">
+                                    <img src="assets/icon-types/dark.svg" alt="">
+                                </div>
+                                <span>Dark</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter dragon">
+                                <div class="icon">
+                                    <img src="assets/icon-types/dragon.svg" alt="">
+                                </div>
+                                <span>Dragon</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter electric">
+                                <div class="icon">
+                                    <img src="assets/icon-types/electric.svg" alt="">
+                                </div>
+                                <span>Electric</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter fairy">
+                                <div class="icon">
+                                    <img src="assets/icon-types/fairy.svg" alt="">
+                                </div>
+                                <span>Fairy</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter fire">
+                                <div class="icon">
+                                    <img src="assets/icon-types/fire.svg" alt="">
+                                </div>
+                                <span>fire</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter fighting">
+                                <div class="icon">
+                                    <img src="assets/icon-types/fighting.svg" alt="">
+                                </div>
+                                <span>Fighting</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter 
+                            flying">
+                                <div class="icon">
+                                    <img src="assets/icon-types/flying.svg" alt="">
+                                </div>
+                                <span>Flying</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter 
+                            ground">
+                                <div class="icon">
+                                    <img src="assets/icon-types/ground.svg" alt="">
+                                </div>
+                                <span>ground</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter 
+                            grass">
+                                <div class="icon">
+                                    <img src="assets/icon-types/grass.svg" alt="">
+                                </div>
+                                <span>grass</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter 
+                            ghost">
+                                <div class="icon">
+                                    <img src="assets/icon-types/ghost.svg" alt="">
+                                </div>
+                                <span>ghost</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter 
+                            ice">
+                                <div class="icon">
+                                    <img src="assets/icon-types/ice.svg" alt="">
+                                </div>
+                                <span>ice</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter 
+                            normal">
+                                <div class="icon">
+                                    <img src="assets/icon-types/normal.svg" alt="">
+                                </div>
+                                <span>normal</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter 
+                            poison">
+                                <div class="icon">
+                                    <img src="assets/icon-types/poison.svg" alt="">
+                                </div>
+                                <span>poison</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter 
+                            psychic">
+                                <div class="icon">
+                                    <img src="assets/icon-types/psychic.svg" alt="">
+                                </div>
+                                <span>psychic</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter 
+                            rock">
+                                <div class="icon">
+                                    <img src="assets/icon-types/rock.svg" alt="">
+                                </div>
+                                <span>rock</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter 
+                            steel">
+                                <div class="icon">
+                                    <img src="assets/icon-types/steel.svg" alt="">
+                                </div>
+                                <span>steel</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter 
+                            water">
+                                <div class="icon">
+                                    <img src="assets/icon-types/water.svg" alt="">
+                                </div>
+                                <span>water</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-container">
+                    <div class="right-container-top">
+                        <div>
+                            <img src="assets/icon-pokeball.svg" alt="">
+                            <span>
+                                <strong id="js-count-pokemons">150</strong> 
+                                Pokémons
+                            </span>
+                        </div>
+                    </div>
+                    <div class="right-container-content">
+                        <button class="card-pokemon grass js-open-pokemon-card">
+                            <div class="image">
+                                <img src="assets/bulbasaur.svg" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="text">
+                                    <span>#003</span>
+                                    <h3>Bulbassauro</h3>
+                                </div>
+                                <div class="icon">
+                                    <img src="assets/icon-types/grass.svg" alt="">
+                                </div>
+                            </div>
+                        </button>
+                        <button class="card-pokemon grass js-open-pokemon-card">
+                            <div class="image">
+                                <img src="assets/bulbasaur.svg" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="text">
+                                    <span>#003</span>
+                                    <h3>Bulbassauro</h3>
+                                </div>
+                                <div class="icon">
+                                    <img src="assets/icon-types/grass.svg" alt="">
+                                </div>
+                            </div>
+                        </button>
+                        <button class="card-pokemon grass js-open-pokemon-card">
+                            <div class="image">
+                                <img src="assets/bulbasaur.svg" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="text">
+                                    <span>#003</span>
+                                    <h3>Bulbassauro</h3>
+                                </div>
+                                <div class="icon">
+                                    <img src="assets/icon-types/grass.svg" alt="">
+                                </div>
+                            </div>
+                        </button>
+                        <button class="card-pokemon grass js-open-pokemon-card">
+                            <div class="image">
+                                <img src="assets/bulbasaur.svg" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="text">
+                                    <span>#003</span>
+                                    <h3>Bulbassauro</h3>
+                                </div>
+                                <div class="icon">
+                                    <img src="assets/icon-types/grass.svg" alt="">
+                                </div>
+                            </div>
+                        </button>
+                        <button class="card-pokemon grass js-open-pokemon-card">
+                            <div class="image">
+                                <img src="assets/bulbasaur.svg" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="text">
+                                    <span>#003</span>
+                                    <h3>Bulbassauro</h3>
+                                </div>
+                                <div class="icon">
+                                    <img src="assets/icon-types/grass.svg" alt="">
+                                </div>
+                            </div>
+                        </button>
+                        <button class="card-pokemon grass js-open-pokemon-card">
+                            <div class="image">
+                                <img src="assets/bulbasaur.svg" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="text">
+                                    <span>#003</span>
+                                    <h3>Bulbassauro</h3>
+                                </div>
+                                <div class="icon">
+                                    <img src="assets/icon-types/grass.svg" alt="">
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <button class="btn-load-more">
+                        Load more Pokémons
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" typePokemonModal="grass">
+        <div class="overlay"></div>
+        <div class="modal-content">
+            <button class="close js-close-modal">
+                <i class="fa-solid fa-x"></i>
+            </button>
+            <div class="modal-left-container">
+                <div class="modal-icon">
+                    <img src="./assets/icon-types/grass.svg" alt="">
+                </div>
+                <div class="modal-image">
+                    <img src="./assets/bulbasaur.svg" alt="">
+                </div>
+            </div>
+            <div class="modal-right-container">
+                <div class="pokemon-name">
+                    <h2>Bulbassauro</h2>
+                    <span>#001</span>
+                </div>
+                <div class="pokemon-type">
+                    <li>
+                        <span class="tag-type grass">
+                            Grass
+                        </span>
+                    </li>
+                    <li>
+                        <span class="tag-type poison">
+                            Poison
+                        </span>
+                    </li>
+                </div>
+                <ul class="pokemon-info">
+                    <li>
+                        <span>Height</span>
+                        <strong>0.7m</strong>
+                    </li>
+                    <li>
+                        <span>Weight</span>
+                        <strong>6.9kg</strong>
+                    </li>
+                    <li>
+                        <span>Abilities</span>
+                        <strong>Overgrow</strong>
+                    </li>
+                </ul>
+                <div class="pokemon-weak">
+                    <h4>Weaknesses</h4>
+                    <ul>
+                        <li>
+                            <span class="tag-type fire">
+                                Fire
+                            </span>
+                        </li>
+                        <li>
+                            <span class="tag-type bug">
+                                Bug
+                            </span>
+                        </li>
+                        <li>
+                            <span class="tag-type flying">
+                                Flyin
+                            </span>
+                        </li>
+                        <li>
+                            <span class="tag-type ice">
+                                Ice
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pokemon-stats">
+                    <h4>Stats</h4>
+                    <div class="stats">
+                        <div class="item-stats">
+                            <span>HP</span>
+                            <div class="bar-status">
+                                <div class="bar"></div>
+                                <ul class="separator">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item-stats">
+                            <span>Attack</span>
+                            <div class="bar-status">
+                                <div class="bar"></div>
+                                <ul class="separator">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item-stats">
+                            <span>Defese</span>
+                            <div class="bar-status">
+                                <div class="bar"></div>
+                                <ul class="separator">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item-stats">
+                            <span>Sp. attack</span>
+                            <div class="bar-status">
+                                <div class="bar"></div>
+                                <ul class="separator">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item-stats">
+                            <span>Sp. defese</span>
+                            <div class="bar-status">
+                                <div class="bar"></div>
+                                <ul class="separator">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item-stats">
+                            <span>Speed</span>
+                            <div class="bar-status">
+                                <div class="bar"></div>
+                                <ul class="separator">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="./js/libs.js"></script>
     <script src="./js/script.js"></script>
 </body>
