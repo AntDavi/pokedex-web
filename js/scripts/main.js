@@ -30,6 +30,6 @@ var slide_hero = new Swiper(".slide-hero", {
     },
     autoplay: {
         delay: 5000,
-        disableOnInteraction: false
     },
+    loop: true,
 })
