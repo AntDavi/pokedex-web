@@ -15,10 +15,12 @@ cardPokemon.forEach(card => {
     card.addEventListener('click', openModalPokemon);
 })
 
+if(closeModal) {
+    closeModal.forEach(card => {
+        card.addEventListener('click', closeModalPokemon);
+    })
+}
 
-closeModal.forEach(card => {
-    card.addEventListener('click', closeModalPokemon);
-})
 
 // Script Slide Hero
 
@@ -33,3 +35,12 @@ var slide_hero = new Swiper(".slide-hero", {
     },
     loop: true,
 })
+
+// Select custon
+
+const btnDropdownSelect = document.querySelector('.js-open-select');
+
+btnDropdownSelect.addEventListener('click', () => {
+    btnDropdownSelect.parentElement.classList.toggle('active')
+})
+

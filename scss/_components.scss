@@ -416,7 +416,10 @@
         .icon {
             margin-bottom: 1rem;
         }
+    }
 
+    @include responsive(1200px) {
+        max-width: 100%;
     }
 }
 
