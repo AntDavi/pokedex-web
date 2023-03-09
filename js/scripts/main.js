@@ -36,7 +36,7 @@ var slide_hero = new Swiper(".slide-hero", {
     loop: true,
 })
 
-// Select custon
+// Select custom 
 
 const btnDropdownSelect = document.querySelector('.js-open-select');
 
@@ -44,3 +44,32 @@ btnDropdownSelect.addEventListener('click', () => {
     btnDropdownSelect.parentElement.classList.toggle('active')
 })
 
+// Listagem de pokemons
+
+function listingPokemons(urlApi) {
+    axios({
+        method: 'GET',
+        url: urlApi
+    })
+    .then((response) => {
+        const countPokemons = document.getElementById('js-count-pokemons');
+
+        const { results, next, count } = response.data;
+
+        countPokemons.innerText = count
+
+        results.forEach(pokemon => {
+            let urlApiDetails = pokemon.url;
+
+            axios({
+                method: 'GET',
+                url: `${urlApiDetails}`
+            })
+            .then(response => {
+                console.log(response.data)
+            })
+        })
+    })
+}
+
+listingPokemons('https://pokeapi.co/api/v2/pokemon?limit=9&offset=0');

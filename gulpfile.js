@@ -49,7 +49,7 @@ gulp.task('alljs', gulpJs)
 
 //Possibilidade de adicionar diversas bibliotecas externas ao projeto
 function libsJs() {
-    return gulp.src(['./js/lib/aos.min.js', './js/lib/swiper.min.js'])
+    return gulp.src(['./js/lib/aos.min.js', './js/lib/swiper.min.js' , './js/lib/axios.min.js'])
     .pipe(concat('libs.js'))
     .pipe(gulp.dest('js/'))
     .pipe(browserSync.stream())
