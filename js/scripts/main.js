@@ -198,5 +198,19 @@ axios({
         })
     })
 
+// Funcionalidade de load more
+
+const btnLoadMore = document.getElementById('js-load-more');
+
+let countPokemons = 10;
+
+function showMorePokemon() {
+    listingPokemons(`https://pokeapi.co/api/v2/pokemon?limit=9&offset=${countPokemons}`)
+
+    countPokemons = countPokemons + 9
+}
+
+btnLoadMore.addEventListener('click', showMorePokemon)
+
 
 
