@@ -5,12 +5,11 @@ cardPokemon.forEach(card => {
     card.addEventListener('click', openModalPokemon);
 })
 
-if(closeModal) {
+if (closeModal) {
     closeModal.forEach(card => {
         card.addEventListener('click', closeModalPokemon);
     })
 }
-
 
 // Script Slide Hero
 
@@ -59,7 +58,7 @@ function createCardPokemon(code, type, name, imagePokemon) {
     let infoCardPokemon = document.createElement('div');
     infoCardPokemon.classList = 'info';
     card.appendChild(infoCardPokemon);
-    
+
     let infoTextPokemon = document.createElement('div');
     infoTextPokemon.classList = 'text';
     infoCardPokemon.appendChild(infoTextPokemon);
@@ -88,50 +87,49 @@ function listingPokemons(urlApi) {
         method: 'GET',
         url: urlApi
     })
-    .then((response) => {
-        const { results, next, count } = response.data;
-        
-        // Faz a contagem de pokemons 
-        const countPokemons = document.getElementById('js-count-pokemons');
-        countPokemons.innerText = count
+        .then((response) => {
+            const { results, next, count } = response.data;
 
-        results.forEach(pokemon => {
-            let urlApiDetails = pokemon.url;
+            // Faz a contagem de pokemons 
+            const countPokemons = document.getElementById('js-count-pokemons');
+            countPokemons.innerText = count
 
-            // Busca as informações do pokemon
-            axios({
-                method: 'GET',
-                url: `${urlApiDetails}`
-            })
-            .then(response => {
-                const { name, id, sprites, types } = response.data
+            results.forEach(pokemon => {
+                let urlApiDetails = pokemon.url;
 
-                const infoCard = {
-                    name: name,
-                    code: id,
-                    imagePokemon: sprites.other.dream_world.front_default,
-                    type: types[0].type.name
-                }
-
-
-                createCardPokemon(infoCard.code, infoCard.type, infoCard.name, infoCard.imagePokemon);
-
-
-                const cardPokemon = document.querySelectorAll('.js-open-pokemon-card');
-
-                cardPokemon.forEach(card => {
-                    card.addEventListener('click', openModalPokemon)
+                // Busca as informações do pokemon
+                axios({
+                    method: 'GET',
+                    url: `${urlApiDetails}`
                 })
+                    .then(response => {
+                        const { name, id, sprites, types } = response.data
 
+                        const infoCard = {
+                            name: name,
+                            code: id,
+                            imagePokemon: sprites.other.dream_world.front_default,
+                            type: types[0].type.name
+                        }
+
+
+                        createCardPokemon(infoCard.code, infoCard.type, infoCard.name, infoCard.imagePokemon);
+
+
+                        const cardPokemon = document.querySelectorAll('.js-open-pokemon-card');
+
+                        cardPokemon.forEach(card => {
+                            card.addEventListener('click', openModalPokemon)
+                        })
+
+                    })
             })
         })
-    })
 }
 
 listingPokemons('https://pokeapi.co/api/v2/pokemon?limit=9&offset=0');
 
 // Abrir e fechar modal dos cards de pokemon
-
 
 
 function openModalPokemon() {
@@ -141,3 +139,64 @@ function openModalPokemon() {
 function closeModalPokemon() {
     document.documentElement.classList.remove('open-modal')
 }
+
+
+// Lista os tipos de pokemon
+
+const areaType = document.getElementById('js-type-area');
+const areaTypeMobile = document.querySelector('.dropdown-select');
+
+axios({
+    method: 'GET',
+    url: 'https://pokeapi.co/api/v2/type'
+})
+    .then(response => {
+        const { results } = response.data;
+
+        results.forEach((type, index) => {
+            if (index < 18) {
+                let itemType = document.createElement('li');
+                areaType.appendChild(itemType);
+
+                let buttonType = document.createElement('button')
+                buttonType.classList = `type-filter ${type.name}`;
+                itemType.appendChild(buttonType)
+
+                let iconType = document.createElement('div')
+                iconType.classList = 'icon';
+                buttonType.appendChild(iconType);
+
+                let typeImage = document.createElement('img')
+                typeImage.setAttribute('src', `assets/icon-types/${type.name}.svg`);
+                iconType.appendChild(typeImage);
+
+                let nameType = document.createElement('span');
+                nameType.textContent = type.name;
+                buttonType.appendChild(nameType);
+
+                //preenchimento do select mobile
+
+                let itemTypeMobile = document.createElement('li');
+                areaTypeMobile.appendChild(itemTypeMobile);
+
+                let buttonTypeMobile = document.createElement('button')
+                buttonTypeMobile.classList = `type-filter ${type.name}`;
+                itemTypeMobile.appendChild(buttonTypeMobile);
+
+                let iconTypeMobile = document.createElement('div')
+                iconTypeMobile.classList = 'icon';
+                buttonTypeMobile.appendChild(iconTypeMobile);
+
+                let typeImageMobile = document.createElement('img')
+                typeImageMobile.setAttribute('src', `assets/icon-types/${type.name}.svg`);
+                iconTypeMobile.appendChild(typeImageMobile);
+
+                let nameTypeMobile = document.createElement('span');
+                nameTypeMobile.textContent = type.name;
+                buttonTypeMobile.appendChild(nameTypeMobile);
+            }
+        })
+    })
+
+
+
