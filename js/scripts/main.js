@@ -132,7 +132,6 @@ listingPokemons('https://pokeapi.co/api/v2/pokemon?limit=9&offset=0');
 
 // Abrir e fechar modal dos cards de pokemon
 
-
 function openModalPokemon() {
     document.documentElement.classList.add('open-modal');
 
@@ -143,7 +142,7 @@ function openModalPokemon() {
     let iconTypePokemon = this.querySelector('.info .icon img');
     let namePokemon = this.querySelector('.info h3').textContent;
     let idPokemon = this.querySelector('.info span').textContent;
-    
+
     const modalDetails = document.getElementById('js-modal-details')
     const imgPokemonModal = document.getElementById('js-image-pokemon-modal');
     const iconTypePokemonModal = document.getElementById('js-image-type-modal');
@@ -335,7 +334,6 @@ const btnSearch = document.getElementById('js-btn-search');
 const inputSearch = document.getElementById('js-input-search');
 
 btnSearch.addEventListener('click', searchPokemon);
-
 inputSearch.addEventListener('keyup', (event) => {
     if (event.code === 'Enter') {
         searchPokemon();
@@ -385,6 +383,7 @@ function searchPokemon() {
         .catch((error) => {
             if (error.response) {
                 const countPokemons = document.getElementById('js-count-pokemons');
+
                 areaPokemon.innerHTML = "";
                 btnLoadMore.style.display = "none";
                 countPokemons.textContent = 0;
