@@ -360,13 +360,30 @@ function searchPokemon() {
                 countPokemons.textContent = 0;
                 // alert('Não foi encontrado nehum resultado como a pesquisa');
 
-                let notFound = document.createElement('h3');
-                notFound.classList.add('notFound');
-                notFound.textContent = "Não foi encontrado nenhum pokemon";
+                let notFound = document.createElement('div');
+                notFound.classList.add('not-found-container');
                 rightContainer.appendChild(notFound);
+
+                let sorryTitle = document.createElement('h3');
+                sorryTitle.classList.add('sorry-title');
+                sorryTitle.textContent = "SORRY";
+                notFound.appendChild(sorryTitle);
+
+                let image = document.createElement('img');
+                image.setAttribute('src', 'assets/pokemon-not-found.svg');
+                notFound.appendChild(image);
+
+                let sorryText = document.createElement('p');
+                sorryText.classList.add('sorry-text');
+                sorryText.textContent = "Pokemon not found";
+                notFound.appendChild(sorryText);
             }
         })
 
 }
+
+                // let typeImageMobile = document.createElement('img')
+                // typeImageMobile.setAttribute('src', `assets/icon-types/${type.name}.svg`);
+                // iconTypeMobile.appendChild(typeImageMobile);
 
 
