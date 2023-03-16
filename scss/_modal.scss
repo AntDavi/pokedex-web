@@ -15,7 +15,7 @@
     pointer-events: none;
     transition: .3s ease;
 
-    &[typePokemonModal="grass"] {
+    &[type-pokemon-modal="grass"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/grass.svg");
@@ -23,7 +23,7 @@
         }
     }
 
-    &[typePokemonModal="bug"] {
+    &[type-pokemon-modal="bug"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/bug.svg");
@@ -31,7 +31,7 @@
         }
     }
 
-    &[typePokemonModal="dark"] {
+    &[type-pokemon-modal="dark"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/dark.svg");
@@ -39,7 +39,7 @@
         }
     }
 
-    &[typePokemonModal="dragon"] {
+    &[type-pokemon-modal="dragon"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/dragon.svg");
@@ -47,7 +47,7 @@
         }
     }
 
-    &[typePokemonModal="electric"] {
+    &[type-pokemon-modal="electric"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/electric.svg");
@@ -55,7 +55,7 @@
         }
     }
 
-    &[typePokemonModal="fairy"] {
+    &[type-pokemon-modal="fairy"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/fairy.svg");
@@ -63,7 +63,7 @@
         }
     }
 
-    &[typePokemonModal="fighting"] {
+    &[type-pokemon-modal="fighting"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/fighting.svg");
@@ -71,7 +71,7 @@
         }
     }
 
-    &[typePokemonModal="fire"] {
+    &[type-pokemon-modal="fire"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/fire.svg");
@@ -79,7 +79,7 @@
         }
     }
 
-    &[typePokemonModal="flying"] {
+    &[type-pokemon-modal="flying"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/flying.svg");
@@ -87,7 +87,7 @@
         }
     }
 
-    &[typePokemonModal="ghost"] {
+    &[type-pokemon-modal="ghost"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/ghost.svg");
@@ -95,7 +95,7 @@
         }
     }
 
-    &[typePokemonModal="ground"] {
+    &[type-pokemon-modal="ground"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/ground.svg");
@@ -103,7 +103,7 @@
         }
     }
 
-    &[typePokemonModal="ice"] {
+    &[type-pokemon-modal="ice"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/ice.svg");
@@ -111,7 +111,7 @@
         }
     }
 
-    &[typePokemonModal="normal"] {
+    &[type-pokemon-modal="normal"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/normal.svg");
@@ -119,7 +119,7 @@
         }
     }
 
-    &[typePokemonModal="poison"] {
+    &[type-pokemon-modal="poison"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/poison.svg");
@@ -127,7 +127,7 @@
         }
     }
 
-    &[typePokemonModal="psychic"] {
+    &[type-pokemon-modal="psychic"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/psychic.svg");
@@ -135,7 +135,7 @@
         }
     }
 
-    &[typePokemonModal="rock"] {
+    &[type-pokemon-modal="rock"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/rock.svg");
@@ -143,7 +143,7 @@
         }
     }
 
-    &[typePokemonModal="steel"] {
+    &[type-pokemon-modal="steel"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/steel.svg");
@@ -151,7 +151,7 @@
         }
     }
 
-    &[typePokemonModal="water"] {
+    &[type-pokemon-modal="water"] {
         .modal-content {
             .modal-left-container {
                 background-image: url("../assets/bg-types/water.svg");

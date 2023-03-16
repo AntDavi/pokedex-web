@@ -44,6 +44,7 @@ function primeiraLetraMaiuscula(string) {
 function createCardPokemon(code, type, name, imagePokemon) {
     let card = document.createElement('button');
     card.classList = `card-pokemon js-open-pokemon-card ${type}`;
+    card.setAttribute('code-pokemon', code)
     areaPokemon.appendChild(card);
 
     let image = document.createElement('div');
@@ -133,7 +134,36 @@ listingPokemons('https://pokeapi.co/api/v2/pokemon?limit=9&offset=0');
 
 
 function openModalPokemon() {
-    document.documentElement.classList.add('open-modal')
+    document.documentElement.classList.add('open-modal');
+
+    console.log(this.classList[2])
+
+    let codePokemon = this.getAttribute('code-pokemon');
+    let imagePokemon = this.querySelector('.thumb-img');
+    let iconTypePokemon = this.querySelector('.info .icon img');
+    let namePokemon = this.querySelector('.info h3').textContent;
+    let idPokemon = this.querySelector('.info span').textContent;
+    
+    const modalDetails = document.getElementById('js-modal-details')
+    const imgPokemonModal = document.getElementById('js-image-pokemon-modal');
+    const iconTypePokemonModal = document.getElementById('js-image-type-modal');
+    const namePokemonModal = document.getElementById('js-name-pokemon-modal')
+    const idPokemonModal = document.getElementById('js-id-pokemon-modal')
+
+    imgPokemonModal.setAttribute('src', imagePokemon.getAttribute('src'))
+    modalDetails.setAttribute('type-pokemon-modal', this.classList[2])
+    iconTypePokemonModal.setAttribute('src', iconTypePokemon.getAttribute('src'))
+    namePokemonModal.textContent = namePokemon
+    idPokemonModal.textContent = idPokemon
+
+
+    // axios({
+    //     method: 'GET',
+    //     url: `https://pokeapi.co/api/v2/pokemon/${codePokemon}`
+    // }) 
+    // .then(response => {
+    //     console.log(response.data.name)
+    // })
 }
 
 function closeModalPokemon() {
@@ -379,11 +409,7 @@ function searchPokemon() {
                 notFound.appendChild(sorryText);
             }
         })
-
 }
 
-                // let typeImageMobile = document.createElement('img')
-                // typeImageMobile.setAttribute('src', `assets/icon-types/${type.name}.svg`);
-                // iconTypeMobile.appendChild(typeImageMobile);
 
 
