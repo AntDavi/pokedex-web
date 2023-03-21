@@ -199,7 +199,26 @@ function openModalPokemon() {
         }
 
         function listingWeaknessesPokemon() {
-            areaWeak.innerHTML = ""
+            areaWeak.innerHTML = "";
+
+            axios({
+                method: 'GET',
+                url: `${infoPokemon.urlType}`
+            })
+            .then(response  => {
+                let weaknesses = response.data.damage_relations.double_damage_from;
+
+                weaknesses.forEach(itemType => {
+                    let itemListWeak = document.createElement('li');
+                    areaWeak.appendChild(itemListWeak);
+    
+                    let spanList = document.createElement('span');
+                    spanList.classList = `tag-type ${itemType.name}`;
+                    spanList.textContent = primeiraLetraMaiuscula(itemType.name);
+    
+                    itemListWeak.appendChild(spanList);
+                })
+            })
         }
 
         pokemonHeight.textContent = `${infoPokemon.height/10}m`;
