@@ -135,8 +135,6 @@ listingPokemons('https://pokeapi.co/api/v2/pokemon?limit=9&offset=0');
 function openModalPokemon() {
     document.documentElement.classList.add('open-modal');
 
-    console.log(this.classList[2])
-
     let codePokemon = this.getAttribute('code-pokemon');
     let imagePokemon = this.querySelector('.thumb-img');
     let iconTypePokemon = this.querySelector('.info .icon img');
@@ -146,8 +144,15 @@ function openModalPokemon() {
     const modalDetails = document.getElementById('js-modal-details')
     const imgPokemonModal = document.getElementById('js-image-pokemon-modal');
     const iconTypePokemonModal = document.getElementById('js-image-type-modal');
-    const namePokemonModal = document.getElementById('js-name-pokemon-modal')
-    const idPokemonModal = document.getElementById('js-id-pokemon-modal')
+    const namePokemonModal = document.getElementById('js-name-pokemon-modal');
+    const idPokemonModal = document.getElementById('js-id-pokemon-modal');
+
+    const areaTypeModal = document.getElementById('js-pokemons-types');
+    const pokemonWeight = document.getElementById('js-pokemon-weight');
+    const pokemonHeight = document.getElementById('js-pokemon-height');
+    const pokemonAbilities = document.getElementById('js-pokemon-abilities');
+
+    const areaWeak = document.getElementById('js-area-weak')
 
     imgPokemonModal.setAttribute('src', imagePokemon.getAttribute('src'))
     modalDetails.setAttribute('type-pokemon-modal', this.classList[2])
@@ -156,13 +161,55 @@ function openModalPokemon() {
     idPokemonModal.textContent = idPokemon
 
 
-    // axios({
-    //     method: 'GET',
-    //     url: `https://pokeapi.co/api/v2/pokemon/${codePokemon}`
-    // }) 
-    // .then(response => {
-    //     console.log(response.data.name)
-    // })
+    axios({
+        method: 'GET',
+        url: `https://pokeapi.co/api/v2/pokemon/${codePokemon}`
+    }) 
+    .then(response => {
+        let data = response.data;
+
+        //listando todas as informações vindas da api necessarias para preencher o modal
+        let infoPokemon = {
+            mainAbilities: primeiraLetraMaiuscula(data.abilities[0].ability.name),
+            types: data.types,
+            weight: data.weight,
+            height: data.height,
+            abilities: data.abilities,
+            stats: data.stats,
+            urlType: data.types[0].type.url
+        }
+
+        console.log(infoPokemon);
+
+        function listingTypesPokemon() {
+            areaTypeModal.innerHTML = "";
+
+            let arrayTypes = infoPokemon.types;
+
+            arrayTypes.forEach(itemType => {
+                let itemList = document.createElement('li');
+                areaTypeModal.appendChild(itemList);
+
+                let spanList = document.createElement('span');
+                spanList.classList = `tag-type ${itemType.type.name}`;
+                spanList.textContent = primeiraLetraMaiuscula(itemType.type.name);
+
+                itemList.appendChild(spanList);
+            })
+        }
+
+        function listingWeaknessesPokemon() {
+            areaWeak.innerHTML = ""
+        }
+
+        pokemonHeight.textContent = `${infoPokemon.height/10}m`;
+        pokemonWeight.textContent = `${infoPokemon.weight/10}kg`;
+
+        pokemonAbilities.textContent = infoPokemon.mainAbilities;
+
+        listingTypesPokemon();
+        listingWeaknessesPokemon()
+    })
 }
 
 function closeModalPokemon() {
