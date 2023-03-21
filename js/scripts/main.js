@@ -179,7 +179,7 @@ function openModalPokemon() {
             urlType: data.types[0].type.url
         }
 
-        console.log(infoPokemon);
+        console.log(infoPokemon.stats);
 
         function listingTypesPokemon() {
             areaTypeModal.innerHTML = "";
@@ -223,8 +223,26 @@ function openModalPokemon() {
 
         pokemonHeight.textContent = `${infoPokemon.height/10}m`;
         pokemonWeight.textContent = `${infoPokemon.weight/10}kg`;
-
         pokemonAbilities.textContent = infoPokemon.mainAbilities;
+
+        const statsHP = document.getElementById('js-stats-hp');
+        const statsAttack = document.getElementById('js-stats-attack');
+        const statsDefese = document.getElementById('js-stats-defese');
+        const statsSpAttack = document.getElementById('js-stats-spattack');
+        const statsSpDefese = document.getElementById('js-stats-spdefese');
+        const statsSpeed = document.getElementById('js-stats-speed');
+
+        console.log(statsHP)
+        console.log(infoPokemon.stats[0].base_stats)
+
+        statsHP.style.width = `${infoPokemon.stats[0].base_stat}%`
+        statsAttack.style.width = `${infoPokemon.stats[1].base_stat}%`
+        statsDefese.style.width = `${infoPokemon.stats[2].base_stat}%`
+        statsSpAttack.style.width = `${infoPokemon.stats[3].base_stat}%`
+        statsSpDefese.style.width = `${infoPokemon.stats[4].base_stat}%`
+        statsSpeed.style.width = `${infoPokemon.stats[5].base_stat}%`
+
+        // 
 
         listingTypesPokemon();
         listingWeaknessesPokemon()
